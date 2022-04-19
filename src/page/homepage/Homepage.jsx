@@ -45,23 +45,21 @@ const Homepage = (props) => {
 
       {hasError && <div className="error">Une erreur s'est produite :(</div>}
 
-      {isLoading && !hasError ? (
-        <div className="loading">Chargement...</div>
-      ) : (
-        !hasError && (
-          <div className="homepage__result-container">
-            <Result
-              title="Villes de métropoles"
-              data={metropolitanCity}
-              hasDoneSearchOnce={hasDoneSearchOnce}
-            />
-            <Result
-              title="Villes d'outre-mer"
-              data={nonMetropolitanCity}
-              hasDoneSearchOnce={hasDoneSearchOnce}
-            />
-          </div>
-        )
+      {!hasError && (
+        <div className="homepage__result-container">
+          <Result
+            title="Villes de métropoles"
+            data={metropolitanCity}
+            hasDoneSearchOnce={hasDoneSearchOnce}
+            isLoading={isLoading}
+          />
+          <Result
+            title="Villes d'outre-mer"
+            data={nonMetropolitanCity}
+            hasDoneSearchOnce={hasDoneSearchOnce}
+            isLoading={isLoading}
+          />
+        </div>
       )}
     </div>
   );
