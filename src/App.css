@@ -1,38 +1,141 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+  --main-bg-color: #D2E5E9;
+  --border-radis: 10px;
+  --result-msg-some-color: #39BB37A1;
+  --result-msg-none-color:#BB3737A1;
+  --result-item-container-color: #161C29A1;
+  --result-postcode-color: #8C8F9A;
+  --text-indext-space: 28px;
+  --size-1: 30px;
+  --size-2: 25px;
+  --size-3: 10px;
+}
+
+* {
+  font-family: 'Montserrat';
+}
+
+
+h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  color: black;
+}
+
+::placeholder {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px; 
+  color: #DCDCDC;
+  text-indent: var(--text-indext-space);
+}
+
+input {
+  text-indent: var(--text-indext-space);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px; 
+  color: black;
+}
+
+h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.error {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loading {
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.result {
+  padding: 20px 35px;
+  border-radius: var(--border-radis);
+  flex: 1;
+  background-color: var(--main-bg-color);
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100%;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.result__title {
+  text-align: center;
+  flex: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.result__message--some {
+  flex: 1;
+  background-color: var(--result-msg-some-color);
+  padding: var(--size-1);
+}
+
+.result__message--none {
+  flex: 1;
+  background-color: var(--result-msg-none-color);
+  padding: var(--size-1);
+}
+
+.result__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 33px;
+  row-gap: 25px;
+}
+
+.result__item {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--result-item-container-color);
+  padding: 20px 14px;
+}
+
+.result__item__postcode {
+  color: var(--result-postcode-color);
+}
+
+.search {
+  padding: var(--size-3);
+  background-color: var(--main-bg-color);
+  border-radius: var(--border-radis);
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  padding-left: var(--size-1);
+}
+
+.search__title {
+}
+
+.search__input{
+  border-radius: var(--border-radis);
+  flex: 1;
+  border: none;
+  margin-left: var(--size-1);
+}
+
+.homepage {
+  padding: var(--size-1);
+}
+
+.homepage__result-container {
+  padding-top: var(--size-1);
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-1);
 }
